@@ -8,9 +8,9 @@ use std::str::FromStr;
 use std::cmp;
 use std::collections::HashSet;
 
-// ============================================================================
-
 struct Solution {}
+
+// ============================================================================
 
 impl Solution {
     fn generate(x: usize, mut y: usize) -> u64 {
@@ -50,6 +50,9 @@ impl Solution {
             let mut x_s = x*x;
             if l <= x_s && x_s <= r && Solution::is_pal(x_s) {
                 ans.insert(x_s);
+            }
+            if x_s > r {
+                break;
             }
         }
 
